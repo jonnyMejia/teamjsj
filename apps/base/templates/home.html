@@ -1,0 +1,31 @@
+﻿{% include 'header.html' %}
+<body>          
+    <div id="wrapper">
+        
+        <!-- /. NAV TOP  -->
+        {% include 'navbar.html' %}
+        
+        <!-- /. NAV SIDE  -->
+        {% include 'sidebar.html' %}
+
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                     <h2>
+                         {% block title %}
+                            TEAM JSJ
+                         {% endblock title %}                              
+                     </h2>   
+                    </div>
+                </div>               
+                <hr />
+                {% block content %}
+                     
+                {% endblock content %}
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+{% include "footer.html" %}
