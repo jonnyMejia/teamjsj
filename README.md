@@ -22,11 +22,14 @@ python manage.py runserver
 
 ---
 ## ⚙️ Ejecutando las pruebas 
-* Formulario para el algoritmo
+#### Formulario para el algoritmo
+
 ![PySocial](Kmeans_1.png)
-* Grafico de Codo
+#### Grafico de Codo
+
 ![PySocial2](Kmeans_2.png)
-* Grafico de los clusters
+#### Grafico de los clusters
+
 ![PySocial3](Kmeans_3.png)
 
 ---
