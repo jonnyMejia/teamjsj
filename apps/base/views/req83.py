@@ -12,6 +12,7 @@ from django.urls import reverse_lazy
 
 color_cycle= itertools.cycle(["orange","pink","blue","brown","red","grey","yellow","green"])
 
+
 def generate_request(url, params={}, method = 'GET'):
     if method == 'GET':
         response = requests.get(url, params=params)
@@ -90,6 +91,9 @@ class Req83View(FormView):
         pre= pd.DataFrame(clusters['values'], columns=['Categoria', 'Cantidad', 'Cluster'])
         pre= pre.groupby(['Cluster'], as_index=False).count().drop('Categoria',axis=1)
         pre['Porcentaje']=(pre['Cantidad'] / pre['Cantidad'].sum() *100).round(2)
+        pre['Numero'] = [x+1 for x in range(len(pre))]
+        pre = pre.sort_values('Porcentaje', ascending=False)
+        pre['#'] = [x+1 for x in range(len(pre))]
         if context:
             context['clusters'] = sorted(clusters['values'], key=lambda x: x[2])
             context['cantidad'] = pre.values
