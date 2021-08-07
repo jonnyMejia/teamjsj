@@ -6,8 +6,8 @@ INIT_CHOICES = (
     ('random', 'random')
 )
 
-class Req83Form(forms.Form):
-    n_clusters= forms.IntegerField(label='Número de clusters', 
+class KmeansForm(forms.Form):
+    n_clusters= forms.IntegerField(label='Número de Clusters', 
         widget=forms.NumberInput(attrs={
             'class': 'form-control'}))
 

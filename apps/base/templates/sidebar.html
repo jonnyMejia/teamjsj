@@ -1,12 +1,21 @@
-<nav class="navbar-default navbar-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav" id="main-menu">
-
-            <li>
-                <a href="{% url 'base:req83' %}"><i class="fa fa-edit "></i>Kmeans</a>
-            </li>
+{% load static %}
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <div class="profile-sidebar">
+        <div class="profile-userpic">
+            <img src="{% static 'img/unmsm_logo.png' %}" class="img-responsive" alt="">
+        </div>
+        <div class="profile-usertitle">
+            <div class="profile-usertitle-name">TeamJSJ</div>
             
-        </ul>
+        </div>
+        <div class="clear"></div>
     </div>
-
-</nav>
+    <div class="divider"></div>
+    <ul class="nav menu">
+        <li class="active"><a href="{% url 'base:kmeans' %}"><em class="fa fa-dashboard">&nbsp;</em> Kmeans</a></li>
+        <li><a href="{% url 'base:kmeans' %}"><em class="fa fa-calendar">&nbsp;</em> DBScan</a></li>
+        <!-- <li><a href="{% url 'base:kmeans' %}"><em class="fa fa-bar-chart">&nbsp;</em> ...</a></li>
+        <li><a href="{% url 'base:kmeans' %}"><em class="fa fa-toggle-off">&nbsp;</em> ...</a></li>
+        <li><a href="{% url 'base:kmeans' %}"><em class="fa fa-clone">&nbsp;</em> ...</a></li> -->
+    </ul>
+</div><!--/.sidebar-->

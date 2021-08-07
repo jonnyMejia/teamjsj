@@ -1,20 +1,35 @@
 {% load static %}
-<div class="footer">     
-        <div class="row">
-            
-        </div>
-    </div>
-      
+	
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/chart.min.js' %}"></script>
+<script src="{% static 'js/chart-data.js' %}"></script>
+<script src="{% static 'js/easypiechart.js' %}"></script>
+<script src="{% static 'js/easypiechart-data.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script>
+  window.onload = function () {
+var chart1 = document.getElementById("line-chart").getContext("2d");
+window.myLine = new Chart(chart1).Line(lineChartData, {
+responsive: true,
+scaleLineColor: "rgba(0,0,0,.2)",
+scaleGridLineColor: "rgba(0,0,0,.05)",
+scaleFontColor: "#c5c7cc"
+});
+};
 
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="{% static 'js/custom.js' %}"></script>
-    
-   
+var hash = document.location.hash;
+var prefix = "tab_";
+if (hash) {
+    $('#tabs a[href='+hash.replace(prefix,"")+']').tab('show');
+} 
+
+// Change hash for page-reload
+$('#tabs a').on('shown.bs.tab', function (e) {
+    window.location.hash = e.target.hash.replace("#", "#" + prefix);
+});
+</script>
+  
 </body>
 </html>
