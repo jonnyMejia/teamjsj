@@ -1,3 +1,4 @@
+{% if image %}
 <div class="col-md-6">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -5,14 +6,14 @@
         </div>
         <div class="panel-body">
             <div class="canvas-wrapper">
-                {% if image %}
                     <img src='data:image/png;base64,{{ image }} ' width="550rem" height="550rem">
-                {% endif %}
                 <canvas class="chart" id="pie-chart" ></canvas>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
+{% if codo %}
 <div class="col-md-6">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -20,10 +21,11 @@
         </div>
         <div class="panel-body">
             <div class="canvas-wrapper">                
-                {% if codo %}
+                
                     <img src='data:image/png;base64,{{ codo }} ' width="550rem" height="550rem">
-                {% endif %}
+               
             </div>
         </div>
     </div>
 </div>
+{% endif %}

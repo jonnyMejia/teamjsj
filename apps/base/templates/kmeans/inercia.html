@@ -2,19 +2,15 @@
 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th>#</th>
             <th class="hidden-480">Cluster</th>
-            <th>Porcentaje</th>
-            <th class="hidden-480">Cantidad</th>
+            <th>Inercia</th>
         </tr>
     </thead>
     <tbody>
-        {% for clust, cant, percent, num in statistics %}
+        {% for clust, iner in wcss %}
         <tr>
-            <td>{{num|floatformat:0}}</td>
             <td>{{clust|floatformat:0}}</td>
-            <td>{{percent}}</td>
-            <td>{{cant}}</td>
+            <td>{{iner}}</td>
         </tr>        
         {% endfor %}
     </tbody>
